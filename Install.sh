@@ -26,7 +26,7 @@ echo -e "${GREEN}[✓] Packages Updated${NC}"
 echo ""
 echo -e "${YELLOW}[3/6] Installing Required Packages...${NC}"
 pkg install python git python-pip -y
-pip install pycryptodome
+pip install pycryptodome requests
 echo -e "${GREEN}[✓] Python, Git, Pip installed${NC}"
 
 echo ""
