@@ -5,6 +5,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 BLUE='\033[1;34m'
 CYAN='\033[0;36m'
+RED='\033[0;31m'
 NC='\033[0m'
 
 echo -e "${PURPLE}=========================================${NC}"
@@ -33,8 +34,12 @@ echo ""
 echo -e "${YELLOW}[4/6] Cloning Repository...${NC}"
 cd ~
 
-git clone https://github.com/Dick682/Super.git
-echo -e "${GREEN}[✓] Repository Cloned${NC}"
+if git clone https://github.com/Dick682/Super.git; then
+    echo -e "${GREEN}[✓] Repository Cloned${NC}"
+else
+    echo -e "${RED}[✗] Clone Failed! Check internet connection.${NC}"
+    exit 1
+fi
 
 echo ""
 echo -e "${YELLOW}[5/6] Setting Up Auto-Run...${NC}"
